@@ -112,7 +112,7 @@ export default class BaseComponent {
 				const fullName = imgName + path.extname(files.file.name);
 				const repath = './public/img/' + fullName;
 				try{
-					await fs.rename(files.file.path, repath);
+					await fs.renameSync(files.file.path, repath);
 					gm(repath)
 					.resize(200, 200, "!")
 					.write(repath, async (err) => {
@@ -150,7 +150,7 @@ export default class BaseComponent {
 				const repath = './public/img/' + imgName + extname;
 				try{
 					const key = imgName + extname;
-					await fs.rename(files.file.path, repath);
+					await fs.renameSync(files.file.path, repath);
 					const token = this.uptoken('node-elm', key);
 					const qiniuImg = await this.uploadFile(token.toString(), key, repath);
 					fs.unlink(repath);
