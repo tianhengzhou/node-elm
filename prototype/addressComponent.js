@@ -17,8 +17,8 @@ class AddressComponent extends BaseComponent {
 	//获取定位地址
 	async guessPosition(req){
 		return new Promise(async (resolve, reject) => {
-			let ip = req.headers['x-forwarded-for'] || 
-	 		req.connection.remoteAddress || 
+			let ip = req.headers['x-forwarded-for'] ||
+	 		req.connection.remoteAddress ||
 	 		req.socket.remoteAddress ||
 	 		req.connection.socket.remoteAddress;
 	 		const ipArr = ip.split(':');
@@ -26,6 +26,9 @@ class AddressComponent extends BaseComponent {
 	 		if (process.env.NODE_ENV == 'development') {
 	 			ip = '180.158.102.141';
 	 		}
+            else if (process.env.NODE_ENV == 'local') {
+                ip = '180.158.102.141';
+            }
 	 		try{
 		 		let result = await this.fetch('http://apis.map.qq.com/ws/location/v1/ip', {
 		 			ip,
