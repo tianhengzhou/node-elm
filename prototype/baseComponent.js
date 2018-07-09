@@ -105,7 +105,7 @@ export default class BaseComponent {
 					img_id = await this.getId('img_id');
 				}catch(err){
 					console.log('获取图片id失败');
-					fs.unlink(files.file.path);
+					fs.unlinkSync(files.file.path);
 					reject('获取图片id失败')
 				}
 				const imgName = (new Date().getTime() + Math.ceil(Math.random()*10000)).toString(16) + img_id;
@@ -125,7 +125,7 @@ export default class BaseComponent {
 					})
 				}catch(err){
 					console.log('保存图片失败', err);
-					fs.unlink(files.file.path)
+					fs.unlinkSync(files.file.path)
 					reject('保存图片失败')
 				}
 			});
@@ -172,7 +172,7 @@ export default class BaseComponent {
 		return new Promise((resolve, reject) => {
 			var extra = new qiniu.io.PutExtra();
 		    qiniu.io.putFile(uptoken, key, localFile, extra, function(err, ret) {
-			    if(!err) {  
+			    if(!err) {
 			    	resolve(ret.key)
 			    } else {
 			    	console.log('图片上传至七牛失败', err);
@@ -181,5 +181,5 @@ export default class BaseComponent {
 		  	});
 
 		})
-	}	
+	}
 }
