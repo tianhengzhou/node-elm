@@ -9,7 +9,7 @@ __注：此项目纯属个人瞎搞，不用于任何商业用途。__
 
 # 说明
 
->  node-elm 接口文档: [接口文档地址](https://github.com/bailicangdu/node-elm/blob/master/API.md) 
+>  node-elm 接口文档: [接口文档地址](https://github.com/bailicangdu/node-elm/blob/master/API.md)
 
 >  如果对您对此项目有兴趣，可以点 "Star" 支持一下 谢谢！ ^_^
 
@@ -56,14 +56,14 @@ npm run dev
 #### (可在后台管理系统添加商铺，食品等数据，并在前端地址查看效果)
 
 ### 前端网址
-[前端网址戳这里](http://cangdu.org/elm/)（请用chrome手机模式预览）
+[前端网址戳这里](http://54.153.51.238:8001/elm/)（请用chrome手机模式预览）
 
 ###### 移动端扫描下方二维码
 
 <img src="https://github.com/bailicangdu/node-elm/blob/master/screenshots/ewm.png" width="250" height="250"/>
 
 ### 后台管理系统网址
-[后台管理网址戳这里](http://cangdu.org/manage/)
+[后台管理网址戳这里](http://54.153.51.238:8001/manage/)
 
 
 
@@ -175,7 +175,7 @@ npm run dev
 │   └── v4
 ├── logs                            日志文件
 ├── middlewares                     中间价
-│   ├── check.js                    权限验证    
+│   ├── check.js                    权限验证
 │   └── statistic.js                API数据统计
 ├── models                          模型(数据库)
 │   ├── admin
@@ -233,15 +233,15 @@ npm run dev
 │   ├── v3.js                       解释说明
 │   └── v4.js                       餐馆
 ├── screenshots                     项目截图
-├── views   
-├── .babelrc 
+├── views
+├── .babelrc
 ├── .gitignore
 ├── API.md                          接口文档
 ├── app.js                          基础配置
 ├── COPYING                         GPL协议
 ├── index.js                        入口文件
 ├── package.json
-├── README.md                  
+├── README.md
 .
 
 47 directories, 197 files
